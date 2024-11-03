@@ -31,6 +31,7 @@ class StellarBurgersLocators:
     LOGO_BUTTON = (By.XPATH, "//a[@href='/']")
     # кнопка выйти в личном кабинете
     LOGOUT_BUTTON = (By.XPATH, "//button[text()='Выход']")
+    #LOGOUT_BUTTON = (By.CLASS_NAME, "Account_button__14Yp3")
     # кнопка конструктор
     CONSTRUCTOR_BUTTON = (By.CLASS_NAME, "AppHeader_header__linkText__3q_va")
     # разделы конструктора
