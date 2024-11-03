@@ -37,7 +37,7 @@ def test_successful_login(driver, user_name, user_email, user_password):
 
     profile_element = driver.find_element(By.XPATH, "//button[text()='Выход']")
     assert profile_element.is_displayed()
-    print("Элемент 'Профиль' найден. Тест пройден.")
+    print("Элемент 'Выход' найден. Тест пройден.")
 
 
 
