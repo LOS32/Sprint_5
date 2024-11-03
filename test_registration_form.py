@@ -33,11 +33,10 @@ def test_successful_login(driver, user_name, user_email, user_password):
     driver.find_element(*StellarBurgersLocators.ACCOUNT_BUTTON).click()
 
     WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//button[text()='Выход']")))
-    #print("Тест успешной регистрации завершен. Регистрация прошла успешно.")
 
-    profile_element = driver.find_element(By.XPATH, "//button[text()='Выход']")
-    assert profile_element.is_displayed()
+    assert driver.find_element(By.CLASS_NAME, "Account_button__14Yp3").text == 'Выход'
     print("Элемент 'Выход' найден. Тест пройден.")
+
 
 
 
