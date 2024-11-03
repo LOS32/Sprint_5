@@ -17,4 +17,4 @@ def test_successful_logout(driver, user_email, user_password):
     driver.find_element(*StellarBurgersLocators.LOGOUT_BUTTON).click()
     #проверка, что после выхода отображается элемент, указывающий на успешный выход
     WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//button[text()='Войти']")))
-    assert driver.find_element(By.XPATH, "//button[text()='Войти']").is_displayed()
+    assert driver.find_element(By.XPATH, "//button[text()='Войти']").text == 'Войти'
