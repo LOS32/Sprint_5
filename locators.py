@@ -32,7 +32,7 @@ class StellarBurgersLocators:
     # кнопка выйти в личном кабинете
     LOGOUT_BUTTON = (By.XPATH, "//button[text()='Выход']")
     # кнопка конструктор
-    CONSTRUCTOR_BUTTON = (By.XPATH, "//p[text()='Конструктор']")
+    CONSTRUCTOR_BUTTON = (By.CLASS_NAME, "AppHeader_header__linkText__3q_va")
     # разделы конструктора
     BUNS_SECTION = (By.XPATH, "//span[text()='Булки']")
     SAUCES_SECTION = (By.XPATH, "//span[text()='Соусы']")
