@@ -2,9 +2,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import StellarBurgersLocators
+from data import user_email, user_password
 
 #переход из личногокабинета в конструктор
-def test_click_on_constructor(driver, user_email, user_password):
+def test_click_on_constructor(driver):
     driver.get("https://stellarburgers.nomoreparties.site/")
     driver.find_element(*StellarBurgersLocators.LOGIN_BUTTON_MAIN).click()
     driver.find_element(*StellarBurgersLocators.LOGIN_NAME_FIELD).send_keys(user_email)
@@ -18,7 +19,7 @@ def test_click_on_constructor(driver, user_email, user_password):
     assert driver.find_element(By.XPATH, "//span[text()='Булки']").text == 'Булки'
 
 #переход из личногокабинета по логотипу Stellar Burgers
-def test_click_on_logo(driver, user_email, user_password):
+def test_click_on_logo(driver):
     driver.get("https://stellarburgers.nomoreparties.site/")
     driver.find_element(*StellarBurgersLocators.LOGIN_BUTTON_MAIN).click()
     driver.find_element(*StellarBurgersLocators.LOGIN_NAME_FIELD).send_keys(user_email)

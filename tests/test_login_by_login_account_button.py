@@ -2,9 +2,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import StellarBurgersLocators
+from data import user_email, user_password
 
 #заполнение формы входа для проверки регистрации
-def test_successful_login_from_main_page(driver, user_email, user_password):
+def test_successful_login_from_main_page(driver):
     driver.get("https://stellarburgers.nomoreparties.site/")
     driver.find_element(*StellarBurgersLocators.LOGIN_BUTTON_MAIN).click()
     driver.find_element(*StellarBurgersLocators.LOGIN_NAME_FIELD).send_keys(user_email)
@@ -16,7 +17,7 @@ def test_successful_login_from_main_page(driver, user_email, user_password):
     assert driver.find_element(By.CLASS_NAME, "Account_button__14Yp3").text == 'Выход'
 
 #заполнение формы входа через кнопку личный кабинет
-def test_successful_login_from_personal_account(driver, user_email, user_password):
+def test_successful_login_from_personal_account(driver):
     driver.get("https://stellarburgers.nomoreparties.site/")
     driver.find_element(*StellarBurgersLocators.ACCOUNT_BUTTON).click()
     #заполнение формы входа
@@ -29,7 +30,7 @@ def test_successful_login_from_personal_account(driver, user_email, user_passwor
     assert driver.find_element(By.CLASS_NAME, "Account_button__14Yp3").text == 'Выход'
 
 #заполнение формы входа со страницы регистрации
-def test_successful_login_from_button_registration_form(driver, user_name, user_email, user_password):
+def test_successful_login_from_button_registration_form(driver):
     #переходим на главную страницу
     driver.get("https://stellarburgers.nomoreparties.site/")
     #нажимаем кнопку войти в аккаунт на главной странице
@@ -47,7 +48,7 @@ def test_successful_login_from_button_registration_form(driver, user_name, user_
     assert driver.find_element(By.CLASS_NAME, "Account_button__14Yp3").text == 'Выход'
 
 #заполнение формы входа со страницы восстановления пароля
-def test_successful_login_from_password_recovery(driver, user_email, user_password):
+def test_successful_login_from_password_recovery(driver):
     driver.get("https://stellarburgers.nomoreparties.site/")
     #нажатие кнопки Войти в аккаунт на главной странице
     driver.find_element(*StellarBurgersLocators.LOGIN_BUTTON_MAIN).click()

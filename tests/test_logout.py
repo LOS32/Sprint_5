@@ -2,9 +2,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import StellarBurgersLocators
+from data import user_email, user_password
 
 #заполнение формы входа для проверки регистрации
-def test_successful_logout(driver, user_email, user_password):
+def test_successful_logout(driver):
     driver.get("https://stellarburgers.nomoreparties.site/")
     driver.find_element(*StellarBurgersLocators.LOGIN_BUTTON_MAIN).click()
     driver.find_element(*StellarBurgersLocators.LOGIN_NAME_FIELD).send_keys(user_email)

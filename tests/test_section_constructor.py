@@ -2,9 +2,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import StellarBurgersLocators
+from data import user_email, user_password
 
 # Переход на вкладку соусы
-def test_successful_jumps_to_section_sauces(driver, user_email, user_password):
+def test_successful_jumps_to_section_sauces(driver):
     driver.get("https://stellarburgers.nomoreparties.site/")
     WebDriverWait(driver, 8).until(expected_conditions.visibility_of_element_located((By.XPATH, "//span[text()='Соусы']")))
     driver.find_element(*StellarBurgersLocators.SAUCES_SECTION).click()
@@ -13,7 +14,7 @@ def test_successful_jumps_to_section_sauces(driver, user_email, user_password):
     assert is_active, "Вкладка 'Соусы' не активна"
     print("Вкладка 'Соусы' активна.")
 
-def test_successful_jumps_to_section_fillings(driver, user_email, user_password):
+def test_successful_jumps_to_section_fillings(driver):
     driver.get("https://stellarburgers.nomoreparties.site/")
     WebDriverWait(driver, 8).until(expected_conditions.visibility_of_element_located((By.XPATH, "//span[text()='Начинки']")))
     driver.find_element(*StellarBurgersLocators.FILLINGS_SECTION).click()
@@ -22,7 +23,7 @@ def test_successful_jumps_to_section_fillings(driver, user_email, user_password)
     assert is_active, "Вкладка 'Начинки' не активна"
     print("Вкладка 'Начинки' активна.")
 
-def test_successful_jumps_to_section_buns(driver, user_email, user_password):
+def test_successful_jumps_to_section_buns(driver):
     driver.get("https://stellarburgers.nomoreparties.site/")
     WebDriverWait(driver, 8).until(expected_conditions.visibility_of_element_located((By.XPATH, "//span[text()='Начинки']")))
     driver.find_element(*StellarBurgersLocators.FILLINGS_SECTION).click()

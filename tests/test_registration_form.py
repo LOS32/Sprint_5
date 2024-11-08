@@ -2,8 +2,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import StellarBurgersLocators
+from data import user_email, user_password
 
-def test_successful_registration(driver, user_name, user_email, user_password):
+def test_successful_registration(driver):
     #переходим на главную страницу
     driver.get("https://stellarburgers.nomoreparties.site/")
     #нажимаем кнопку войти в аккаунт на главной странице
@@ -18,7 +19,7 @@ def test_successful_registration(driver, user_name, user_email, user_password):
     driver.find_element(*StellarBurgersLocators.BUTTON_SUBMIT_REGISTRATION).click()
 
 #заполнение формы входа для проверки регистрации
-def test_successful_login(driver, user_email, user_password):
+def test_successful_login(driver):
     driver.get("https://stellarburgers.nomoreparties.site/")
     driver.find_element(*StellarBurgersLocators.LOGIN_BUTTON_MAIN).click()
     driver.find_element(*StellarBurgersLocators.LOGIN_NAME_FIELD).send_keys(user_email)
@@ -29,7 +30,7 @@ def test_successful_login(driver, user_email, user_password):
     WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//button[text()='Выход']")))
     assert driver.find_element(By.CLASS_NAME, "Account_button__14Yp3").text == 'Выход'
 
-def test_registration_with_invalid_password(driver, user_name, user_email, user_password):
+def test_registration_with_invalid_password(driver):
     #переходим на главную страницу
     driver.get("https://stellarburgers.nomoreparties.site/")
     #нажимаем кнопку войти в аккаунт на главной странице
