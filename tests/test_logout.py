@@ -12,11 +12,11 @@ class TestLogout:
         driver.find_element(*StellarBurgersLocators.LOGIN_NAME_FIELD).send_keys(user_email)
         driver.find_element(*StellarBurgersLocators.PASSWORD_NAME_FIELD).send_keys(user_password)
         driver.find_element(*StellarBurgersLocators.LOGIN_BUTTON_MAIN_FORM).click()
-        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//p[text()='Личный Кабинет']")))
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(StellarBurgersLocators.ACCOUNT_BUTTON))
         #вход в личный кабинет
         driver.find_element(*StellarBurgersLocators.ACCOUNT_BUTTON).click()
-        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//button[text()='Выход']")))
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(StellarBurgersLocators.LOGOUT_BUTTON))
         driver.find_element(*StellarBurgersLocators.LOGOUT_BUTTON).click()
         #проверка, что после выхода отображается элемент, указывающий на успешный выход
-        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//button[text()='Войти']")))
-        assert driver.find_element(By.XPATH, "//button[text()='Войти']").text == 'Войти'
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(StellarBurgersLocators.LOGIN_BUTTON_MAIN_FORM))
+        assert driver.find_element(*StellarBurgersLocators.LOGIN_BUTTON_MAIN_FORM).text == 'Войти'

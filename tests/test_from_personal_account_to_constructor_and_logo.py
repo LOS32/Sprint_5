@@ -15,9 +15,9 @@ class TestFromPersonalAccountToConstructorAndLogo:
         #вход в личный кабинет
         driver.find_element(*StellarBurgersLocators.ACCOUNT_BUTTON).click()
         driver.find_element(*StellarBurgersLocators.CONSTRUCTOR_BUTTON).click()
-        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//p[text()='Конструктор']")))
-        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//span[text()='Булки']")))
-        assert driver.find_element(By.XPATH, "//span[text()='Булки']").text == 'Булки'
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(StellarBurgersLocators.CONSTRUCTOR_BUTTON))
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(StellarBurgersLocators.BUNS_SECTION))
+        assert driver.find_element(*StellarBurgersLocators.BUNS_SECTION).text == 'Булки'
 
     #переход из личногокабинета по логотипу Stellar Burgers
     def test_click_on_logo(self, driver):
@@ -29,5 +29,5 @@ class TestFromPersonalAccountToConstructorAndLogo:
         #вход в личный кабинет
         driver.find_element(*StellarBurgersLocators.ACCOUNT_BUTTON).click()
         driver.find_element(*StellarBurgersLocators.LOGO_BUTTON).click()
-        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//span[text()='Булки']")))
-        assert driver.find_element(By.XPATH, "//span[text()='Булки']").text == 'Булки'
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(StellarBurgersLocators.BUNS_SECTION))
+        assert driver.find_element(*StellarBurgersLocators.BUNS_SECTION).text == 'Булки'

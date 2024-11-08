@@ -31,13 +31,22 @@ class StellarBurgersLocators:
     LOGO_BUTTON = (By.XPATH, "//a[@href='/']")
     # кнопка выйти в личном кабинете
     LOGOUT_BUTTON = (By.XPATH, "//button[text()='Выход']")
-    #LOGOUT_BUTTON = (By.CLASS_NAME, "Account_button__14Yp3")
     # кнопка конструктор
     CONSTRUCTOR_BUTTON = (By.CLASS_NAME, "AppHeader_header__linkText__3q_va")
+    #сообщение об ошибке в поле пароль
+    ERROR_MSSAGE = (By.CLASS_NAME, "input__error")
     # разделы конструктора
     BUNS_SECTION = (By.XPATH, "//span[text()='Булки']")
     SAUCES_SECTION = (By.XPATH, "//span[text()='Соусы']")
     FILLINGS_SECTION = (By.XPATH, "//span[text()='Начинки']")
+    #проверка активна ли вкладка Соусы
+    SAUCES_TAB = (By.XPATH, "//span[text()='Соусы']/ancestor::div[contains(@class, 'tab_tab__1SPyG')]")
+    # проверка активна ли вкладка Начинки
+    FILLINGS_TAB = (By.XPATH, "//span[text()='Начинки']/ancestor::div[contains(@class, 'tab_tab__1SPyG')]")
+    # проверка активна ли вкладка Булки
+    BUNS_TAB = (By.XPATH, "//span[text()='Булки']/ancestor::div[contains(@class, 'tab_tab__1SPyG')]")
+    # класс активной кнопки с секцией ингридиента в конструкторе
+    TAB_ACTIVE_CLASS = "tab_tab_type_current__2BEPc"
 
 
 

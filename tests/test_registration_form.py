@@ -23,8 +23,8 @@ class TestRegistrationForm:
         driver.find_element(*StellarBurgersLocators.REGISTRATION_PASSWORD_FIELD).send_keys(user_password)
         #нажатие кнопки зарегистрироваться в форме
         driver.find_element(*StellarBurgersLocators.BUTTON_SUBMIT_REGISTRATION).click()
-        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, "//button[text()='Войти']")))
-        assert driver.find_element(By.XPATH, "//button[text()='Войти']").text == 'Войти'
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(StellarBurgersLocators.LOGIN_BUTTON_MAIN_FORM))
+        assert driver.find_element(*StellarBurgersLocators.LOGIN_BUTTON_MAIN_FORM).text == 'Войти'
 
     def test_registration_with_invalid_password(self, driver):
         #переходим на главную страницу
@@ -39,9 +39,9 @@ class TestRegistrationForm:
         driver.find_element(*StellarBurgersLocators.REGISTRATION_PASSWORD_FIELD).send_keys("123")
         #нажатие кнопки зарегистрироваться в форме
         driver.find_element(*StellarBurgersLocators.BUTTON_SUBMIT_REGISTRATION).click()
-        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.CLASS_NAME, "input__error")))
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located(StellarBurgersLocators.ERROR_MSSAGE))
         #проверка отображения сообщения об ошибке
-        assert driver.find_element(By.CLASS_NAME, "input__error").text == 'Некорректный пароль'
+        assert driver.find_element(*StellarBurgersLocators.ERROR_MSSAGE).text == 'Некорректный пароль'
 
 
 
