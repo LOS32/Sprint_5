@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import StellarBurgersLocators
-from data import user_email, user_password
 
 # Переход на вкладку соусы
 def test_successful_jumps_to_section_sauces(driver):
