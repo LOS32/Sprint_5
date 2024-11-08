@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import StellarBurgersLocators
-from data import user_email, user_password
+from data import user_name, user_email, user_password
 
 def test_successful_registration(driver):
     #переходим на главную страницу
