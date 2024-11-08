@@ -32,6 +32,8 @@ pytest <путь-к-файлу-с-тестами> -v
 
 conftest.py: содержит общие фикстуры для тестов.
 locators.py: содержит локаторы элементов для тестов.
+helpers.py: содержит функцию для генерации рандомных email и password
+data.py: содержит данные user_name, user_email, user_password и URL
 test_login_by_login_account_button.py: тесты для проверки входа в аккаунт через кнопки Войти в разных окнах.
 test_from_personal_account_to_constructor_and_logo.py: тесты для проверки переходов из личного кабинета в конструктор и по логотипу.
 test_logout.py: тесты для проверки выхода из аккаунта.
